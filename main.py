@@ -21,3 +21,11 @@ yeserday_data = data_list[0]
 day_before_yesterday_data = data_list[1]
 yesterday_closing_price = yeserday_data["4. close"]
 day_before_yesterday_closing_price = day_before_yesterday_data["4. close"]
+stock_price_difference = abs(float(yesterday_closing_price) -
+                             float(day_before_yesterday_closing_price))
+difference_percent = stock_price_difference / \
+    float(yesterday_closing_price) * 100
+print(yesterday_closing_price)
+print(day_before_yesterday_closing_price)
+print(stock_price_difference)
+print(difference_percent)
