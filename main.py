@@ -1,4 +1,5 @@
 import requests
+from twilio.rest import Client
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -7,6 +8,11 @@ STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 NEWS_API_KEY = "cd74dba04abd4f098e89d2417ee7c59c"
 STOCK_API_KEY = "AMGOWU3MUEBYFY4S"
+# Authentication info from Twilio:
+ACCOUNT_SID = "AC49339c118b248f6c31e783077c669551"
+# Environment variable for sensitive data:
+AUTH_TOKEN = "***********"
+TWILIO_NUMBER = "+16155812977"
 
 # Parameters for stock endpoint request:
 stock_params = {
