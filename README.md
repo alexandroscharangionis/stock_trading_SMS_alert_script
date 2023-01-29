@@ -1,1 +1,1 @@
-# stock_trading_SMS_alert_script
+# A script for sending alert SMS messages with latest stock news when a specified stock price fluctuates, using TWILIO, Alpha Vantage & News APIs
