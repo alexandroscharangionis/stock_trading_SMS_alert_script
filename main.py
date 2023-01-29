@@ -18,5 +18,6 @@ response = requests.get(STOCK_ENDPOINT, params=stock_params)
 data = response.json()["Time Series (Daily)"]
 data_list = [value for key, value in data.items()]
 yeserday_data = data_list[0]
+day_before_yesterday_data = data_list[1]
 yesterday_closing_price = yeserday_data["4. close"]
-print(yesterday_closing_price)
+day_before_yesterday_closing_price = day_before_yesterday_data["4. close"]
