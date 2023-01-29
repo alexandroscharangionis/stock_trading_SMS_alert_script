@@ -25,7 +25,13 @@ stock_price_difference = abs(float(yesterday_closing_price) -
                              float(day_before_yesterday_closing_price))
 difference_percent = stock_price_difference / \
     float(yesterday_closing_price) * 100
-print(yesterday_closing_price)
-print(day_before_yesterday_closing_price)
-print(stock_price_difference)
-print(difference_percent)
+
+if difference_percent > 5:
+    # Parameters for news endpoint request:
+    news_params = {
+        "apiKey": NEWS_API_KEY,
+        "q": STOCK,
+        "searchIn": "title"
+    }
+    news_response = requests.get(NEWS_ENDPOINT, params=news_params)
+    top_articles = news_response.json()["articles"][:3]
