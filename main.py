@@ -45,3 +45,8 @@ if difference_percent > 5:
 
 formatted_articles = [
     f"Headline: {article['title']} \nBrief: {article['description']}" for article in top_articles]
+
+client = Client(ACCOUNT_SID, AUTH_TOKEN)
+for article in formatted_articles:
+    message = client.messages.create(
+        body=article, from_=TWILIO_NUMBER, to="+40727718096")
