@@ -36,3 +36,6 @@ if difference_percent > 5:
     }
     news_response = requests.get(NEWS_ENDPOINT, params=news_params)
     top_articles = news_response.json()["articles"][:3]
+
+formatted_articles = [
+    f"Headline: {article['title']} \nBrief: {article['description']}" for article in top_articles]
