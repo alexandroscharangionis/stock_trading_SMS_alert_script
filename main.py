@@ -26,6 +26,7 @@ stock_price_difference = abs(float(yesterday_closing_price) -
 difference_percent = stock_price_difference / \
     float(yesterday_closing_price) * 100
 
+# If stock price difference is more than specified int, get latest stock news:
 if difference_percent > 5:
     # Parameters for news endpoint request:
     news_params = {
